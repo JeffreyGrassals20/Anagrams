@@ -10,7 +10,7 @@ namespace Tests
         public void Test1()
         {
             bool result = Anagrams.Program.IsAnagram("Rat","Tar");
-
+            
 
             Assert.IsTrue(result);
         }
