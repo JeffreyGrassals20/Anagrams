@@ -8,11 +8,17 @@ namespace Anagrams
 
         public static Boolean IsAnagram(string str1, string str2)
         {
-            if (str1.ToLower().Equals(str2.ToLower()))
+            string x = str1.ToLower();
+            string y = str2.ToLower();
+
+            if (x == null || y == null)
+                return false;
+
+            if (x.Equals(y))
                 return true;
 
-            string ordered1 = String.Concat(str1.ToLower().OrderBy(x => x));
-            string ordered2 = String.Concat(str2.ToLower().OrderBy(x => x));
+            string ordered1 = String.Concat(x.OrderBy(x => x));
+            string ordered2 = String.Concat(y.OrderBy(x => x));
 
 
             Console.WriteLine(ordered1);
@@ -27,8 +33,7 @@ namespace Anagrams
         }
         static void Main(string[] args)
         {
-            //Program prog = new Program();
-            Console.WriteLine(Anagrams.Program.IsAnagram("Rat", "Tar"));
+            Console.WriteLine(Anagrams.Program.IsAnagram("Rat", " "));
 
         }
     }
